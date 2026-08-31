@@ -47,13 +47,13 @@ public class MemoriaTemaRepository implements TemaRepository {
                 encontrados.add(tema);
             }
         }
-        // Converte a lista dinâmica para o array estático exigido pela interface
+        // converte a lista para vetor exigido pela interface
         return encontrados.toArray(new Tema[0]);
     }
 
     @Override
     public Tema[] getTodos() {
-        return null;
+        return pool.toArray(new Tema[0]);
     }
 
     @Override
