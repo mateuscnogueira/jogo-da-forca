@@ -22,7 +22,7 @@ public class Tema extends ObjetoDominioImpl {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public final void setNome(String nome) {
         if (nome == null) {
             throw new IllegalArgumentException("Nome não pode ser null");
         }
