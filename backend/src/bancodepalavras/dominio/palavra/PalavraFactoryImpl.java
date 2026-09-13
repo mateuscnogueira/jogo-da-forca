@@ -3,7 +3,7 @@ package bancodepalavras.dominio.palavra;
 import bancodepalavras.dominio.tema.Tema;
 import factory.EntityFactory;
 
-public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory{
+public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory {
 
     private static PalavraFactoryImpl soleInstance;
 
@@ -12,14 +12,14 @@ public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory{
     }
 
     // método para CRIAR a instância única passando o repositório como parâmetro
-    public static void createSoleInstance (PalavraRepository repository){
+    public static void createSoleInstance (PalavraRepository repository) {
         if (soleInstance == null){
             soleInstance = new PalavraFactoryImpl(repository);
         }
     }
 
     // método tradicional para PEGAR a instância já criada
-    public static PalavraFactory getSoloInstance(){
+    public static PalavraFactoryImpl getSoleInstance() {
         if (soleInstance == null){
             throw new IllegalStateException("A fábrica PalavraFactoryImpl não foi inicializada. Chame createSoleInstance() primeiro.");
         }
@@ -28,7 +28,7 @@ public class PalavraFactoryImpl extends EntityFactory implements PalavraFactory{
 
     // sobrescreve o getRepository para retornar o tipo específico (PalavraRepository)
     @Override 
-    protected PalavraRepository getRepository(){
+    protected PalavraRepository getRepository() {
         return (PalavraRepository) super.getRepository();
     }
 

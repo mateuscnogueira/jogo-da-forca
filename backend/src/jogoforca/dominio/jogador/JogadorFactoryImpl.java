@@ -7,7 +7,7 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory 
 
     private static JogadorFactoryImpl soleInstance;
 
-    protected JogadorFactoryImpl(Repository repository) {
+    private JogadorFactoryImpl(Repository repository) {
         super(repository);
     }
 
@@ -26,6 +26,7 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory 
         return soleInstance;
     }
 
+    // sobrescreve o getRepository para retornar o tipo específico (JogadorRepository)
     @Override
     protected JogadorRepository getRepository(){
         return (JogadorRepository) super.getRepository();
@@ -33,6 +34,7 @@ public class JogadorFactoryImpl extends EntityFactory implements JogadorFactory 
 
     @Override
     public Jogador getJogador(String nome) {
+        // a fábrica pede o próximo ID para o repositório e chama o método criar() da entidade Jogador
         return Jogador.criar(this.getProximoId(), nome);
     }
     
