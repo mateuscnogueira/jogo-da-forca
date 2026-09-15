@@ -75,9 +75,6 @@ public class Aplicacao {
         sendo assim, diferente dos AppServices e Factories que possuem essa "trava", elas aceitam a nova fábrica visual imediatamente */
         Palavra.setLetraFactory(this.getLetraFactory());
         Rodada.setBonecoFactory(this.getBonecoFactory());
-
-        /* observação: mesmo que seja chamado o configurar() novamente (devido a alteração de algum parâmetro),
-        isso não vai gerar nenhum problema, pois o Singleton imposto nas classes irá blindar a criação de uma nova instância se já existir uma do mesmo tipo */
     }
 
     // Repositório Factory
