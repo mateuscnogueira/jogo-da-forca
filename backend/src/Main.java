@@ -17,8 +17,6 @@ public class Main {
         // 1. Inicializa o maestro do jogo e configura as injeções
         Aplicacao app = Aplicacao.getSoleInstance();
         app.configurar();
-
-        app.setTipoRepositoryFactory("relacional");
         
         // 2. Alimenta o banco em memória com dados iniciais para podermos jogar
         alimentarBancoDeDadosMock(app);
