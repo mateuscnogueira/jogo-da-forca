@@ -208,6 +208,7 @@ public class Rodada extends ObjetoDominioImpl {
     public void exibirItens(Object contexto) {
         for (Item item : itens) {
             item.exibir(contexto); // delega para item, que repassa para palavra que irá verificar quais letras estão encobertas e descobertas
+            System.out.println(); // quebra linha após cada palavra
         }
     }
     
@@ -218,6 +219,7 @@ public class Rodada extends ObjetoDominioImpl {
     public void exibirPalavras(Object contexto) {
         for (Item item : itens) {
             item.getPalavra().exibir(contexto);
+            System.out.println(); // quebra linha após cada palavra
         }
     }
     
